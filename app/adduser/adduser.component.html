@@ -1,0 +1,53 @@
+<div class="container" style="background-color:rgb(196, 196, 250)">
+  <h1 style="text-align: center;">Admin Panel</h1>
+    <div class="row" style="padding-top: 30px;">
+        <div class="col-sm-4"></div>
+        
+        <div class="col-sm-4"></div>
+
+        <div class="col-sm-4"> 
+            search: <input type="text" name="search" #search  (keyup)="dosearch(search.value)"> &nbsp;
+           <a routerLink="/patient's details"> <button class="btn btn-success">Add User</button></a>
+        </div>
+        </div>
+        <br><br>
+        
+
+    <div class="row">
+<div class="col"></div>
+
+<div class="col">
+  {{msg}}
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">DoB</th>
+            <th scope="col">Email</th>
+            <th scope="col">Dose</th>
+            <th scope="col">Address</th>
+            <th scope="col">Operations</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users; index as i;">
+            <th scope="row">{{i+1}}</th>
+            <td>{{user.Name}}</td>
+            <td>{{user.date}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.Dose}}</td>
+            <td>{{user.Address}}</td>
+            <td>
+               <a routerLink="/editpatient/{{user._id}}"> <button class="btn btn-primary">Edit</button></a> &nbsp;
+                <button class="btn btn-danger"(click)="deleteuser(user._id)">Delete</button>
+            </td>
+          </tr>
+        <p *ngIf="users.length==0" style="text-align: center;"> No Records Found :(</p>
+        </tbody>
+      </table>
+</div>
+
+<div class="col"></div>
+</div>
+</div>

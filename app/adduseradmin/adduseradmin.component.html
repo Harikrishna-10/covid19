@@ -1,0 +1,57 @@
+<div class="container" style="background-color:rgb(190, 190, 245);">
+    <div class="row" style="padding-top: 30px;">
+        <div class="col-sm-4"></div>
+        
+        <div class="col-sm-4"></div>
+
+        <div class="col-sm-4"> 
+            search: <input type="text" name="search" #searc  (keyup)="dosearch(searc.value)"> &nbsp;
+           
+        </div>
+        </div>
+        <br><br>
+        <div class="dropdown">
+            <button class="dropbtn">Please select your Role</button>
+            <div class="dropdown-content">
+              <a routerLink="/loginadmin">Admin</a>
+              <a routerLink="/adduseradmin">Login as user</a>
+              
+            </div>
+          </div>
+
+    <div class="row">
+<div class="col"></div>
+
+<div class="col">
+  {{msg}}
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">DoB</th>
+            <th scope="col">Email</th>
+            <th scope="col">Dose</th>
+            <th scope="col">Address</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users; index as i;">
+            <th scope="row">{{i+1}}</th>
+            <td>{{user.Name}}</td>
+            <td>{{user.date}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.Dose}}</td>
+            <td>{{user.Address}}</td>
+            
+          </tr>
+        <p *ngIf="users.length==0" style="text-align: center;"> No Records Found :(</p>
+        </tbody>
+      </table>
+</div>
+
+<div class="col"></div>
+</div>
+</div>
+
