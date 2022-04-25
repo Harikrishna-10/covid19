@@ -1,0 +1,67 @@
+<div style="background-color: rgb(174, 174, 238);background-size: 100px; ">
+<h2 style="text-align:center;color: rgb(107, 20, 32);">Contact Us</h2>
+
+<div class="containe">
+    <h3 style="color: green;">{{msg}}</h3>
+  <form #reg="ngForm" (ngSubmit)="Registers(reg)" >
+    <label for="fname"> Name : &nbsp;</label>
+    <input type="text" id="fname" name="Name" placeholder="Your name.." pattern="^[a-zA-Z]+$" #Name="ngModel" required ngModel><br>
+    <p class="alert alert-danger" *ngIf="Name.errors?.required && Name.touched">please enter Name</p>
+    <label for="lname">Email Id : &nbsp;</label>
+    <input type="email" id="lname" name="email" placeholder="Your email.." required email #email="ngModel" ngModel><br>
+    <p class="alert alert-danger" *ngIf="email.errors?.required && email.touched">please enter email Id</p>
+    <p class="alert alert-danger" *ngIf="email.errors?.email && email.touched">please enter valid Email id</p>
+    <label for="lname">Address : &nbsp;</label>
+    <input type="text" id="lname" name="Address" placeholder="your Address" pattern="^[a-zA-Z]+$" #country="ngModel" required ngModel><br>
+    <p class="alert alert-danger" *ngIf="country.errors?.required && country.touched">please enter Address</p>
+    <label for="subject"style="margin-right:700px">Subject :</label><br>
+    <textarea id="subject" name="subject" placeholder="Write something.." #subject="ngModel" style="height:200px" pattern="^[a-zA-Z0-9]+$" required ngModel></textarea><br>
+    <p class="alert alert-danger" *ngIf="subject.errors?.required && subject.touched">please enter Subject</p>
+    <button type="submit" value="Submit" [disabled]="reg.invalid">Submit</button>
+  </form>
+</div>
+</div>
+<br><br>
+
+
+<div class="footer-dark">
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 item">
+                    <h3>Donation</h3>
+                    <ul>
+                        <li><a href="#">plasma</a></li>
+                        <li><a href="#">blood</a></li>
+                        <li><a href="#">organ</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 item">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Download cerificate </a></li>
+                        <li><a href="#">verification</a></li>
+                        <li><a href="#">Hosting</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 item">
+                    <h3>About</h3>
+                    <ul>
+                        <li><a href="#">government</a></li>
+                        <li><a href="#">vaccination</a></li>
+                        <li><a href="#">Instruction</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 item text">
+                    <h3>cowin.com</h3>
+                    <p>vaccinate if you are not vaccinated</p>
+                </div>
+                
+                <div class="col item social"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-youtube"></i></a><a href="#"><i class="fa fa-instagram"></i></a><a href="#"><i class="fa fa-google"></i></a></div>
+            </div>
+            <p class="copyright">cowin.com © 2021</p>
+        </div>
+    </footer>
+</div>
+
+

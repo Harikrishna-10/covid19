@@ -1,0 +1,33 @@
+<div style="background-image: url(assets/corv.jpg);background-size: 100px;background-repeat: no-repeat;background-attachment: fixed;background-size: cover;opacity: 0.8; ">
+    <h2 style="text-align:center;color: rgb(0, 0, 0);">Edit Patient's Detail</h2>
+    
+    <div class="containe">
+        <h3 style="color: rgb(195, 241, 195);">{{msg}}</h3>
+      <form #reg="ngForm" *ngIf="userData" (ngSubmit)="edituser(reg)" >
+        <label for="fname" style="color: black;font-size: large;"> Name : &nbsp;</label>
+        <input type="text" id="fname" name="Name" placeholder="Your name.."  pattern="^[a-zA-Z]+$" #Name="ngModel" required [ngModel]="userData.Name"><br>
+        <p class="alert alert-danger" *ngIf="Name.errors?.required && Name.touched">please enter Name</p>
+        <label for="date" style="color: black;font-size: large;">Date of Birth : &nbsp;</label>
+        <input type="date" name="date" id="date" placeholder="dd-mm-yyyy" required #date="ngModel" [ngModel]="userData.date"><br>
+        <p class="alert alert-danger" *ngIf="date.errors?.required && date.touched">please enter Date of Birth</p>
+
+        <label for="lname" style="color: black;font-size: large;">Email Id : &nbsp;</label>
+        <input type="email" id="lname" name="email" placeholder="Your email.." required email #email="ngModel" [ngModel]="userData.email"><br>
+        <p class="alert alert-danger" *ngIf="email.errors?.required && email.touched">please enter email Id</p>
+        <p class="alert alert-danger" *ngIf="email.errors?.email && email.touched">please enter valid Email id</p>
+        <label for="lname" style="color: black;font-size: large;">Address : &nbsp;</label>
+        <input type="text" id="lname" name="Address" placeholder="your Address" pattern="^[a-zA-Z]+$" #country="ngModel" required [ngModel]="userData.Address"><br>
+        <p class="alert alert-danger" *ngIf="country.errors?.required && country.touched">please enter Address</p><br>
+        
+       
+
+        <label for="Dose1" style="color: black;font-size: large;">Dose1 :&nbsp; </label>
+        <input type="radio" value="Dose1"  style="width: 20px; height: 20px;" name="Dose" id="Dose1" #Dose1="ngModel" [ngModel]="userData.Dose">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <label for="Dose2" style="color: black;font-size: large;">Fully Dosed :&nbsp; </label>
+        <input type="radio"  value="Dose2" style="width: 20px; height: 20px;" name="Dose" id="Dose2" #Dose2="ngModel" [ngModel]="userData.Dose"><br><br>
+        
+        <button type="submit" value="Submit" >update </button>
+      </form>
+    </div>
+    </div>

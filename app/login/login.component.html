@@ -1,0 +1,24 @@
+<div >
+    <img [src]="myimage" style="width: 100%;height: 100%;background-size: cover;background-attachment: fixed;">
+</div>
+
+
+    <div class="login-box">
+        <p style="color: green;">
+            {{msg}}
+        </p><br>
+    <form  #f="ngForm" (ngSubmit)="doLogin(f)">     
+        <img src="assets/avatar.png" class="avatar">
+            <h1>LOGIN</h1>
+               
+                <p>Useremail</p>
+                <input type="email" name="useremail" placeholder="Enter useremail" ngModel>
+                <p>Password</p>
+                <input type="password" name="password" placeholder="Enter Password" ngModel>
+                <input type="submit" name="submit" value="Login">
+                <a href="#">Don't have Account</a> &nbsp;&nbsp;  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; <a routerLink="/register">Register</a>
+    </form>
+            </div>
+
+        
+    

@@ -1,0 +1,19 @@
+<div class="login-box" style="background-color:rgb(1, 1, 2)">
+    <p style="color: green;">
+        {{msg}}
+    </p><br>
+<form  #f="ngForm" (ngSubmit)="doLoginadmin(f)">     
+    <img src="assets/avatar.png" class="avatar">
+        <h1>Admin</h1>
+           
+            <p>Useremail</p>
+            <input type="email" name="useremail" placeholder="Enter useremail" ngModel>
+            <p>Password</p>
+            <input type="password" name="password" placeholder="Enter Password" ngModel>
+            <input type="submit" name="submit" value="Login">
+            
+</form>
+        </div>
+
+    
+
